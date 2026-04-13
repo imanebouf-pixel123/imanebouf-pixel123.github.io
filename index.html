@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Imane Bouf | Portfolio</title>
+
+<style>
+:root {
+    --bg-dark: #070714;
+    --main-cyan: #19999F; 
+    --accent-orange: #e67e22; 
+    --text-light: #f0f0ff;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-dark);
+    background-image: 
+        radial-gradient(ellipse at 5% 5%, rgba(25, 153, 159, 0.15) 0%, transparent 50%),
+        radial-gradient(ellipse at 95% 95%, rgba(230, 126, 34, 0.1) 0%, transparent 50%);
+    background-attachment: fixed;
+    color: var(--text-light);
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    align-items: center; 
+    overflow-x: hidden;
+}
+
+
+header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    padding: 40px 5%;
+    display: flex;
+    gap: 40px;
+    z-index: 1000;
+}
+
+header a {
+    color: #9490b0;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    position: relative;
+    transition: 0.3s;
+}
+
+header a:hover {
+    color: var(--main-cyan);
+}
+
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 95%;
+    max-width: 1900px;
+    margin: 0 auto;
+    padding: 0 5%;
+}
+
+
+.text-section {
+    flex: 1;
+    text-align: left;
+}
+
+.intro-text {
+    text-transform: uppercase;
+    letter-spacing: 6px;
+    color: var(--accent-orange); 
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+
+h1 {
+    font-size: 110px;
+    margin: 0;
+    line-height: 1.1;
+    font-weight: 900;
+    background: linear-gradient(to right, #fff 20%, var(--main-cyan) 50%, var(--accent-orange) 80%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 0 15px rgba(25, 153, 159, 0.3));
+}
+
+.role-text {
+    font-size: 28px;
+    color: #ccc;
+    margin-top: 25px;
+    margin-bottom: 50px;
+    max-width: 900px;
+    line-height: 1.4;
+}
+
+/* BUTTONS */
+.btn-group {
+    display: flex;
+    gap: 25px;
+}
+
+.btn {
+    padding: 18px 45px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 19px;
+    transition: all 0.4s ease;
+}
+
+.btn-cyan {
+    background: linear-gradient(to right, #00eaff, #19999F);
+    color: #070714;
+    box-shadow: 0 0 15px rgba(25, 153, 159, 0.6);
+}
+
+.btn-cyan:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 35px rgba(25, 153, 159, 0.9);
+}
+
+.btn-outline {
+    border: 2px solid #444;
+    color: #ccc;
+}
+
+.btn-outline:hover {
+    color: white;
+    border-color: var(--main-cyan);
+    box-shadow: 0 0 40px var(--main-cyan); 
+    transform: scale(1.08);
+}
+
+
+.image-section {
+    flex: 0 0 450px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.profile-img-container {
+    width: 450px;
+    height: 450px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 8px solid var(--main-cyan);
+    box-shadow: 0 0 50px rgba(25, 153, 159, 0.3);
+}
+
+.profile-img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <a href="#about">À Propos</a>
+    <a href="#projets">Projets</a>
+    <a href="#contact">Contact</a>
+</header>
+
+<div class="container">
+
+    <div class="text-section">
+        <p class="intro-text">BONJOUR, JE SUIS</p>
+
+        <h1>IMANE BOUF</h1>
+
+        <p class="role-text">
+            Future Ingénieure Industrielle de l'ENSA Kénitra, passionnée par l'ingénierie des données.
+        </p>
+        
+        <div class="btn-group">
+            <a href="#contact" class="btn btn-cyan">Mon contact</a>
+            <a href="#projets" class="btn btn-outline">Voir mes projets</a>
+        </div>
+    </div>
+
+    <div class="image-section">
+        <div class="profile-img-container">
+            <img src="imane-profile.png" alt="Imane Bouf">
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
