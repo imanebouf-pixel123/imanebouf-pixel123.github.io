@@ -98,12 +98,13 @@
 
         .btn-group { display: flex; gap: 15px; flex-wrap: wrap; }
 
+        /* تصحيح التفاعل للأزرار */
         .btn {
             padding: 15px 35px;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 600;
-            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             display: inline-block;
         }
 
@@ -118,8 +119,9 @@
         }
 
         .btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 10px 20px rgba(25, 153, 159, 0.2);
+            transform: scale(1.08) translateY(-3px);
+            box-shadow: 0 10px 20px rgba(25, 153, 159, 0.3);
+            filter: brightness(1.1);
         }
 
         .profile-img-container {
@@ -133,18 +135,20 @@
         }
 
         .profile-img-container:hover {
-            transform: rotate(5deg) scale(1.02);
+            transform: rotate(3deg) scale(1.02);
             border-color: var(--accent-orange);
         }
 
         .profile-img-container img { width: 100%; height: 100%; object-fit: cover; }
 
-        /* ABOUT & SKILLS */
+        /* ABOUT SECTION */
         .about-section { padding: 80px 5%; background: var(--card-bg); }
         .about-container { max-width: 1000px; margin: 0 auto; }
         .about-text h2 { font-size: 32px; color: var(--main-cyan); margin-bottom: 25px; }
+        .about-text p { font-size: 17px; line-height: 1.8; color: #ddd; margin-bottom: 20px; }
         .highlight { color: var(--accent-orange); font-weight: bold; }
 
+        /* تصحيح التفاعل للمهارات */
         .skills-list { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
         
         .skill-item {
@@ -154,17 +158,19 @@
             border-radius: 20px;
             font-size: 14px;
             color: var(--main-cyan);
-            transition: 0.3s ease;
-            cursor: default;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            display: inline-block;
         }
 
         .skill-item:hover {
             background: var(--main-cyan);
             color: var(--bg-dark);
             transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(25, 153, 159, 0.4);
         }
 
-        /* PROJECTS SECTION - NEW DESIGN */
+        /* PROJECTS SECTION - تصحيح الحجم والتمركز */
         .projects-section { padding: 100px 5%; }
         .projects-title {
             text-align: center; font-size: 40px; color: var(--main-cyan);
@@ -179,20 +185,15 @@
             margin: 0 auto;
         }
 
-        /* التمركز للمشاريع 4 و 5 */
-        .project-card:nth-child(4) { grid-column: 1 / 2; margin-left: 50%; }
-        .project-card:nth-child(5) { grid-column: 2 / 3; margin-left: 50%; }
-
         .project-card {
             background: var(--card-bg);
             border: 1px solid rgba(25, 153, 159, 0.2);
             border-radius: 20px;
             padding: 30px;
-            transition: 0.4s ease;
+            transition: all 0.4s ease;
             display: flex;
             flex-direction: column;
-            text-decoration: none;
-            color: inherit;
+            min-height: 250px;
         }
 
         .project-card:hover {
@@ -201,6 +202,10 @@
             background: rgba(25, 153, 159, 0.08);
             box-shadow: 0 20px 40px rgba(0,0,0,0.4);
         }
+
+        /* جعل المشاريع الأخيرة في الوسط */
+        .project-card:nth-child(4) { grid-column: 1 / 2; margin-left: 50%; width: 100%; }
+        .project-card:nth-child(5) { grid-column: 2 / 3; margin-left: 50%; width: 100%; }
 
         .tag {
             color: var(--accent-orange); font-size: 11px; font-weight: 800;
@@ -213,6 +218,7 @@
         .github-btn {
             color: var(--main-cyan); font-weight: bold; font-size: 14px;
             display: flex; align-items: center; gap: 8px; transition: 0.3s;
+            text-decoration: none;
         }
 
         .project-card:hover .github-btn { color: var(--accent-orange); }
@@ -220,7 +226,6 @@
         @media (max-width: 1024px) {
             .projects-grid { grid-template-columns: repeat(2, 1fr); }
             .project-card:nth-child(n) { grid-column: auto; margin-left: 0; }
-            h1 { font-size: 60px; }
         }
 
         @media (max-width: 768px) {
@@ -228,6 +233,7 @@
             .image-section { order: -1; margin-bottom: 40px; }
             .projects-grid { grid-template-columns: 1fr; }
             .profile-img-container { width: 250px; height: 250px; }
+            h1 { font-size: 50px; }
         }
     </style>
 </head>
@@ -260,15 +266,29 @@
     <div class="about-container">
         <div class="about-text">
             <h2>À Propos de Moi</h2>
-            <p>Actuellement étudiante en <span class="highlight">1ère année de Cycle Ingénieur en Génie Industriel</span> à l'ENSA Kénitra, je m'intéresse à l'analyse de données, au pilotage de la performance et à l'amélioration continue.</p>
-            <p>Expérience chez <span class="highlight">SEWS-MAROC</span> en Qualité : suivi des KPIs et méthode 5S.</p>
+            <p>
+                Actuellement étudiante en <span class="highlight">1ère année de Cycle Ingénieur en Génie Industriel</span> à l'ENSA Kénitra, je m'intéresse particulièrement à l'analyse de données industrielles, au pilotage de la performance et à l'amélioration continue.
+            </p>
+            <p>
+                J'ai acquis une première expérience concrète chez <span class="highlight">SEWS-MAROC Kénitra</span> au sein du département <span class="highlight">Qualité</span>, où j'ai travaillé sur le suivi des indicateurs de performance (KPIs) pour soutenir la prise de décision opérationnelle en utilisant Excel et les 5S.
+            </p>
+            <p>
+                Parallèlement, je suis fortement engagée dans la vie associative en tant que membre active du <span class="highlight">Club CIELK</span>. Curieuse, structurée et orientée résultats, je cherche à développer mes compétences à l'interface entre Data, Industrie et Management.
+            </p>
+            <p>
+                <strong>Je suis actuellement à la recherche d'un stage d'observation, débutant en juillet.</strong>
+            </p>
+            
             <div class="skills-list">
                 <span class="skill-item">Suivi de KPIs</span>
                 <span class="skill-item">SQL</span>
+                <span class="skill-item">Méthode 5S</span>
+                <span class="skill-item">Excel</span>
                 <span class="skill-item">Python</span>
                 <span class="skill-item">Power BI</span>
+                <span class="skill-item">CSS</span>
+                <span class="skill-item">HTML</span>
                 <span class="skill-item">R</span>
-                <span class="skill-item">HTML/CSS</span>
             </div>
         </div>
     </div>
@@ -281,31 +301,31 @@
             <div class="tag">Python • Kaggle</div>
             <h3>Supply Chain Analytics</h3>
             <p>Analyse de <strong>9 994 transactions</strong>. Pipeline de cleaning et visualisations stratégiques pour l'aide à la décision.</p>
-            <div class="github-btn">Voir sur GitHub →</div>
+            <a href="#" class="github-btn">Voir sur GitHub →</a>
         </div>
         <div class="project-card">
             <div class="tag">Power BI • Qualité</div>
             <h3>Dashboard Qualité</h3>
             <p>Suivi de <strong>15K pièces</strong>. Analyse des défauts et KPIs stratégiques (Taux Qualité: <strong>92.22%</strong>).</p>
-            <div class="github-btn">Voir sur GitHub →</div>
+            <a href="#" class="github-btn">Voir sur GitHub →</a>
         </div>
         <div class="project-card">
             <div class="tag">R • Statistiques</div>
             <h3>Étude d'Employabilité</h3>
             <p>Analyse statistique sur <strong>83 individus</strong>. Insights sur le marché de l'emploi des ingénieurs.</p>
-            <div class="github-btn">Voir sur GitHub →</div>
+            <a href="#" class="github-btn">Voir sur GitHub →</a>
         </div>
         <div class="project-card">
             <div class="tag">SQL • Database</div>
             <h3>Architecture Relationnelle</h3>
             <p>Modélisation de <strong>10+ tables</strong> et requêtes avancées sur Oracle APEX et MySQL.</p>
-            <div class="github-btn">Voir sur GitHub →</div>
+            <a href="#" class="github-btn">Voir sur GitHub →</a>
         </div>
         <div class="project-card">
             <div class="tag">C Language • Logic</div>
             <h3>Algorithmes & Complexité</h3>
-            <p>Optimisation de performance et analyse BFS/DFS sous contraintes de ressources.</p>
-            <div class="github-btn">Voir sur GitHub →</div>
+            <p>Optimisation de performance et تحليل BFS/DFS تحت إكراهات الموارد.</p>
+            <a href="#" class="github-btn">Voir sur GitHub →</a>
         </div>
     </div>
 </section>
