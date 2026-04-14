@@ -1,314 +1,236 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Imane Bouf | Portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imane Bouf | Portfolio</title>
+    <style>
+        :root {
+            --bg-dark: #070714;
+            --main-cyan: #19999F; 
+            --accent-orange: #e67e22; 
+            --text-light: #f0f0ff;
+            --card-bg: rgba(255, 255, 255, 0.03);
+        }
 
-<style>
-:root {
-    --bg-dark: #070714;
-    --main-cyan: #19999F; 
-    --accent-orange: #e67e22; 
-    --text-light: #f0f0ff;
-}
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-dark);
+            background-image: 
+                radial-gradient(ellipse at 5% 5%, rgba(25, 153, 159, 0.15) 0%, transparent 50%),
+                radial-gradient(ellipse at 95% 95%, rgba(230, 126, 34, 0.1) 0%, transparent 50%);
+            background-attachment: fixed;
+            color: var(--text-light);
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
 
-body {
-    margin: 0;
-    padding: 0;
-    background-color: var(--bg-dark);
-    background-image: 
-        radial-gradient(ellipse at 5% 5%, rgba(25, 153, 159, 0.15) 0%, transparent 50%),
-        radial-gradient(ellipse at 95% 95%, rgba(230, 126, 34, 0.1) 0%, transparent 50%);
-    background-attachment: fixed;
-    color: var(--text-light);
-    font-family: 'Inter', sans-serif;
-    min-height: 100vh;
-  
-    overflow-x: hidden;
-}
+        header {
+            position: fixed;
+            top: 0;
+            right: 0;
+            padding: 20px 5%;
+            display: flex;
+            gap: 20px;
+            z-index: 1000;
+            background: rgba(7, 7, 20, 0.9);
+            width: 100%;
+            justify-content: flex-end;
+            box-sizing: border-box;
+        }
 
-header {
-    position: fixed;
-    top: 0;
-    right: 0;
-    padding: 20px 5%;
-    display: flex;
-    gap: 20px;
-    z-index: 1000;
-    background: rgba(7, 7, 20, 0.8);
-    width: 100%;
-    justify-content: flex-end;
-}
+        header a {
+            color: #9490b0;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 14px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: 0.3s ease;
+        }
 
-header a {
-    color: #9490b0;
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 14px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    transition: 0.3s;
-}
+        header a:hover {
+            color: var(--main-cyan);
+            transform: translateY(-2px);
+        }
 
-header a:hover {
-    color: var(--main-cyan);
-}
+        /* HERO SECTION */
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 150px 0 100px 0; 
+        }
 
-/* HERO SECTION */
-.container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 150px 0 100px 0; 
-}
+        .text-section { flex: 1; }
 
-.text-section {
-    flex: 1;
-}
+        .intro-text {
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: var(--accent-orange); 
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
 
-.intro-text {
-    text-transform: uppercase;
-    letter-spacing: 4px;
-    color: var(--accent-orange); 
-    font-size: 18px;
-    font-weight: 700;
-    margin-bottom: 10px;
-}
+        h1 {
+            font-size: 80px;
+            margin: 0;
+            line-height: 1.1;
+            font-weight: 900;
+            background: linear-gradient(to right, #fff 20%, var(--main-cyan) 50%, var(--accent-orange) 80%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
 
-h1 {
-    font-size: 80px;
-    margin: 0;
-    line-height: 1.1;
-    font-weight: 900;
-    background: linear-gradient(to right, #fff 20%, var(--main-cyan) 50%, var(--accent-orange) 80%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
+        .role-text {
+            font-size: 20px;
+            color: #ccc;
+            margin: 20px 0 40px 0;
+            max-width: 600px;
+            line-height: 1.5;
+        }
 
-.role-text {
-    font-size: 20px;
-    color: #ccc;
-    margin: 20px 0 40px 0;
-    max-width: 600px;
-    line-height: 1.5;
-}
+        .btn-group { display: flex; gap: 15px; flex-wrap: wrap; }
 
-.btn-group {
-    display: flex;
-    gap: 15px;
-    flex-wrap: wrap;
-}
+        .btn {
+            padding: 15px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: inline-block;
+        }
 
-.btn {
-    padding: 15px 35px;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: 0.4s;
-}
+        .btn-cyan {
+            background: linear-gradient(to right, #00eaff, #19999F);
+            color: #070714;
+        }
 
-.btn-cyan {
-    background: linear-gradient(to right, #00eaff, #19999F);
-    color: #070714;
-}
+        .btn-outline {
+            border: 2px solid #444;
+            color: #ccc;
+        }
 
-.btn-outline {
-    border: 2px solid #444;
-    color: #ccc;
-}
+        .btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(25, 153, 159, 0.2);
+        }
 
-.image-section {
-    flex: 0 0 400px;
-    display: flex;
-    justify-content: center;
-}
+        .profile-img-container {
+            width: 350px;
+            height: 350px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 6px solid var(--main-cyan);
+            box-shadow: 0 0 30px rgba(25, 153, 159, 0.3);
+            transition: 0.5s ease;
+        }
 
-.profile-img-container {
-    width: 350px;
-    height: 350px;
-    border-radius: 50%;
-    overflow: hidden;
-    border: 6px solid var(--main-cyan);
-    box-shadow: 0 0 30px rgba(25, 153, 159, 0.3);
-}
+        .profile-img-container:hover {
+            transform: rotate(5deg) scale(1.02);
+            border-color: var(--accent-orange);
+        }
 
-.profile-img-container img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
+        .profile-img-container img { width: 100%; height: 100%; object-fit: cover; }
 
-/* ABOUT SECTION */
-.about-section {
-    padding: 80px 5%;
-    background: rgba(255, 255, 255, 0.03);
-}
+        /* ABOUT & SKILLS */
+        .about-section { padding: 80px 5%; background: var(--card-bg); }
+        .about-container { max-width: 1000px; margin: 0 auto; }
+        .about-text h2 { font-size: 32px; color: var(--main-cyan); margin-bottom: 25px; }
+        .highlight { color: var(--accent-orange); font-weight: bold; }
 
-.about-container {
-    max-width: 1000px;
-    margin: 0 auto;
-}
+        .skills-list { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+        
+        .skill-item {
+            background: rgba(25, 153, 159, 0.1);
+            border: 1px solid var(--main-cyan);
+            padding: 8px 22px;
+            border-radius: 20px;
+            font-size: 14px;
+            color: var(--main-cyan);
+            transition: 0.3s ease;
+            cursor: default;
+        }
 
-.about-text h2 {
-    font-size: 32px;
-    color: var(--main-cyan);
-    margin-bottom: 25px;
-}
+        .skill-item:hover {
+            background: var(--main-cyan);
+            color: var(--bg-dark);
+            transform: translateY(-5px);
+        }
 
-.about-text p {
-    font-size: 17px;
-    line-height: 1.8;
-    color: #ddd;
-    margin-bottom: 20px;
-}
+        /* PROJECTS SECTION - NEW DESIGN */
+        .projects-section { padding: 100px 5%; }
+        .projects-title {
+            text-align: center; font-size: 40px; color: var(--main-cyan);
+            margin-bottom: 60px; font-weight: 800;
+        }
 
-.highlight {
-    color: var(--accent-orange);
-    font-weight: bold;
-}
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
 
-.skills-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-top: 30px;
-}
+        /* التمركز للمشاريع 4 و 5 */
+        .project-card:nth-child(4) { grid-column: 1 / 2; margin-left: 50%; }
+        .project-card:nth-child(5) { grid-column: 2 / 3; margin-left: 50%; }
 
-.skill-item {
-    background: rgba(25, 153, 159, 0.1);
-    border: 1px solid var(--main-cyan);
-    padding: 8px 20px;
-    border-radius: 20px;
-    font-size: 14px;
-    color: var(--main-cyan);
-}
+        .project-card {
+            background: var(--card-bg);
+            border: 1px solid rgba(25, 153, 159, 0.2);
+            border-radius: 20px;
+            padding: 30px;
+            transition: 0.4s ease;
+            display: flex;
+            flex-direction: column;
+            text-decoration: none;
+            color: inherit;
+        }
 
+        .project-card:hover {
+            transform: translateY(-15px);
+            border-color: var(--accent-orange);
+            background: rgba(25, 153, 159, 0.08);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        }
 
-@media (max-width: 768px) {
-    .container {
-        flex-direction: column;
-        text-align: center;
-        padding: 100px 5% 50px 5%;
-    }
+        .tag {
+            color: var(--accent-orange); font-size: 11px; font-weight: 800;
+            text-transform: uppercase; letter-spacing: 1px; margin-bottom: 15px;
+        }
 
-    .image-section {
-        flex: 0 0 auto;
-        margin-top: 40px;
-        order: -1;
-    }
+        .project-card h3 { font-size: 22px; color: #fff; margin: 0 0 15px 0; }
+        .project-card p { font-size: 14px; color: #b0b2c3; line-height: 1.6; margin-bottom: 20px; flex-grow: 1; }
+        
+        .github-btn {
+            color: var(--main-cyan); font-weight: bold; font-size: 14px;
+            display: flex; align-items: center; gap: 8px; transition: 0.3s;
+        }
 
-    .profile-img-container {
-        width: 250px;
-        height: 250px;
-    }
+        .project-card:hover .github-btn { color: var(--accent-orange); }
 
-    h1 {
-        font-size: 50px;
-    }
+        @media (max-width: 1024px) {
+            .projects-grid { grid-template-columns: repeat(2, 1fr); }
+            .project-card:nth-child(n) { grid-column: auto; margin-left: 0; }
+            h1 { font-size: 60px; }
+        }
 
-    .btn-group {
-        justify-content: center;
-    }
-
-    header {
-        padding: 15px;
-        justify-content: center;
-        gap: 15px;
-    }
-}
-    /* SECTION PROJETS */
-.projects-section {
-    padding: 80px 5%;
-    background: transparent;
-}
-
-.projects-title {
-    font-size: 36px;
-    color: var(--main-cyan);
-    margin-bottom: 50px;
-    text-align: left;
-    max-width: 1000px;
-    margin-left: auto;
-    margin-right: auto;
-    font-weight: 800;
-}
-
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 30px;
-    max-width: 1000px;
-    margin: 0 auto;
-}
-
-.project-card {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(25, 153, 159, 0.2);
-    border-radius: 20px;
-    padding: 25px;
-    transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-}
-
-.project-card:hover {
-    transform: translateY(-10px);
-    border-color: var(--main-cyan);
-    background: rgba(25, 153, 159, 0.05);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
-}
-
-.project-tag-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-bottom: 15px;
-}
-
-.tag {
-    background: rgba(25, 153, 159, 0.1);
-    color: var(--main-cyan);
-    padding: 4px 12px;
-    border-radius: 15px;
-    font-size: 12px;
-    font-weight: 600;
-}
-
-.project-card h3 {
-    font-size: 22px;
-    color: #fff;
-    margin-bottom: 15px;
-}
-
-.project-card p {
-    font-size: 14px;
-    color: #b0b2c3;
-    line-height: 1.6;
-    margin-bottom: 20px;
-    flex-grow: 1;
-}
-
-.github-btn {
-    color: var(--main-cyan);
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 14px;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-}
-
-.github-btn:hover {
-    color: var(--accent-orange);
-}
-</style>
+        @media (max-width: 768px) {
+            .container { flex-direction: column; text-align: center; padding-top: 100px; }
+            .image-section { order: -1; margin-bottom: 40px; }
+            .projects-grid { grid-template-columns: 1fr; }
+            .profile-img-container { width: 250px; height: 250px; }
+        }
+    </style>
 </head>
-
 <body>
 
 <header>
@@ -317,114 +239,76 @@ h1 {
     <a href="#contact">Contact</a>
 </header>
 
-<div class="container">
+<main class="container">
     <div class="text-section">
         <p class="intro-text">BONJOUR, JE SUIS</p>
         <h1>IMANE BOUF</h1>
-        <p class="role-text">
-            Future Ingénieure Industrielle de l'ENSA Kénitra, passionnée par l'ingénierie des données.
-        </p>
+        <p class="role-text">Future Ingénieure Industrielle de l'ENSA Kénitra, passionnée par l'ingénierie des données.</p>
         <div class="btn-group">
             <a href="#contact" class="btn btn-cyan">Mon contact</a>
             <a href="#projets" class="btn btn-outline">Voir mes projets</a>
         </div>
     </div>
-
     <div class="image-section">
         <div class="profile-img-container">
             <img src="imane-profile.png.png" alt="Imane Bouf">
         </div>
     </div>
-</div>
+</main>
 
 <section id="about" class="about-section">
     <div class="about-container">
         <div class="about-text">
             <h2>À Propos de Moi</h2>
-            <p>
-                Actuellement étudiante en <span class="highlight">1ère année de Cycle Ingénieur en Génie Industriel</span> à l'ENSA Kénitra, je m'intéresse particulièrement à l'analyse de données industrielles, au pilotage de la performance et à l'amélioration continue.
-            </p>
-            <p>
-                J'ai acquis une première expérience concrète chez <span class="highlight">SEWS-MAROC Kénitra</span> au sein du département <span class="highlight">Qualité</span>, où j'ai travaillé sur le suivi des indicateurs de performance (KPIs) pour soutenir la prise de décision opérationnelle en utilisant Excel et les 5S.
-            </p>
-            <p>
-                Parallèlement, je suis fortement engagée dans la vie associative en tant que membre active du <span class="highlight">Club CIELK</span>. Curieuse, structurée et orientée résultats, je cherche à développer mes compétences à l'interface entre Data, Industrie et Management.
-            </p>
-            <p>
-                <strong>Je suis actuellement à la recherche d'un stage d'observation , débutant en juillet.</strong>
-            </p>
-            
+            <p>Actuellement étudiante en <span class="highlight">1ère année de Cycle Ingénieur en Génie Industriel</span> à l'ENSA Kénitra, je m'intéresse à l'analyse de données, au pilotage de la performance et à l'amélioration continue.</p>
+            <p>Expérience chez <span class="highlight">SEWS-MAROC</span> en Qualité : suivi des KPIs et méthode 5S.</p>
             <div class="skills-list">
                 <span class="skill-item">Suivi de KPIs</span>
                 <span class="skill-item">SQL</span>
-                <span class="skill-item">Méthode 5S</span>
-                <span class="skill-item">Excel</span>
                 <span class="skill-item">Python</span>
                 <span class="skill-item">Power BI</span>
-                <span class="skill-item">CSS</span>
-                <span class="skill-item">HTML</span>
                 <span class="skill-item">R</span>
+                <span class="skill-item">HTML/CSS</span>
             </div>
         </div>
     </div>
 </section>
+
 <section id="projets" class="projects-section">
-    <div class="projects-container">
-        <h2 class="projects-title">Mes Projets</h2>
-        
-        <div class="projects-grid">
-            <div class="project-card">
-                <div class="project-tag-container">
-                    <span class="tag">Python</span>
-                    <span class="tag">Data Analysis</span>
-                    <span class="tag">Kaggle</span>
-                </div>
-                <h3>Supply Chain Analytics</h3>
-                <p>Pipeline complet de Data Cleaning et visualisations stratégiques sur <strong>9 994 transactions</strong>. Optimisation de la prise de décision via la POO.</p>
-                <a href="#" class="github-btn">Voir le projet →</a>
-            </div>
-
-            <div class="project-card">
-                <div class="project-tag-container">
-                    <span class="tag">Power BI</span>
-                    <span class="tag">Qualité</span>
-                </div>
-                <h3>Dashboard Excellence Industrielle</h3>
-                <p>Pilotage de la qualité sur <strong>15K pièces</strong>. Analyse des défauts et KPIs stratégiques (Taux Qualité: <strong>92.22%</strong>).</p>
-                <a href="#" class="github-btn">Voir le projet →</a>
-            </div>
-
-            <div class="project-card">
-                <div class="project-tag-container">
-                    <span class="tag">R</span>
-                    <span class="tag">Statistiques</span>
-                </div>
-                <h3>Étude d'Employabilité</h3>
-                <p>Analyse statistique sur <strong>83 individus</strong>. Insights stratégiques sur le marché de l'emploi des ingénieurs au Maroc.</p>
-                <a href="#" class="github-btn">Voir le projet →</a>
-            </div>
-
-            <div class="project-card">
-                <div class="project-tag-container">
-                    <span class="tag">C Language</span>
-                    <span class="tag">Optimization</span>
-                </div>
-                <h3>Algorithmes & Complexité</h3>
-                <p>Optimisation des structures de données et analyse de performance (BFS/DFS) sous contraintes de ressources.</p>
-                <a href="#" class="github-btn">Voir le projet →</a>
-            </div>
-
-            <div class="project-card">
-                <div class="project-tag-container">
-                    <span class="tag">SQL</span>
-                    <span class="tag">Database Design</span>
-                </div>
-                <h3>Architecture Relationnelle</h3>
-                <p>Conception de bases de données (<strong>10+ tables</strong>) et requêtes avancées sur Oracle APEX et MySQL.</p>
-                <a href="#" class="github-btn">Voir le projet →</a>
-            </div>
+    <h2 class="projects-title">Mes Projets</h2>
+    <div class="projects-grid">
+        <div class="project-card">
+            <div class="tag">Python • Kaggle</div>
+            <h3>Supply Chain Analytics</h3>
+            <p>Analyse de <strong>9 994 transactions</strong>. Pipeline de cleaning et visualisations stratégiques pour l'aide à la décision.</p>
+            <div class="github-btn">Voir sur GitHub →</div>
+        </div>
+        <div class="project-card">
+            <div class="tag">Power BI • Qualité</div>
+            <h3>Dashboard Qualité</h3>
+            <p>Suivi de <strong>15K pièces</strong>. Analyse des défauts et KPIs stratégiques (Taux Qualité: <strong>92.22%</strong>).</p>
+            <div class="github-btn">Voir sur GitHub →</div>
+        </div>
+        <div class="project-card">
+            <div class="tag">R • Statistiques</div>
+            <h3>Étude d'Employabilité</h3>
+            <p>Analyse statistique sur <strong>83 individus</strong>. Insights sur le marché de l'emploi des ingénieurs.</p>
+            <div class="github-btn">Voir sur GitHub →</div>
+        </div>
+        <div class="project-card">
+            <div class="tag">SQL • Database</div>
+            <h3>Architecture Relationnelle</h3>
+            <p>Modélisation de <strong>10+ tables</strong> et requêtes avancées sur Oracle APEX et MySQL.</p>
+            <div class="github-btn">Voir sur GitHub →</div>
+        </div>
+        <div class="project-card">
+            <div class="tag">C Language • Logic</div>
+            <h3>Algorithmes & Complexité</h3>
+            <p>Optimisation de performance et analyse BFS/DFS sous contraintes de ressources.</p>
+            <div class="github-btn">Voir sur GitHub →</div>
         </div>
     </div>
 </section>
+
 </body>
 </html>
