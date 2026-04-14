@@ -24,30 +24,30 @@ body {
     color: var(--text-light);
     font-family: 'Inter', sans-serif;
     min-height: 100vh;
-    display: flex;
-    align-items: center; 
+  
     overflow-x: hidden;
 }
-
 
 header {
     position: fixed;
     top: 0;
     right: 0;
-    padding: 40px 5%;
+    padding: 20px 5%;
     display: flex;
-    gap: 40px;
+    gap: 20px;
     z-index: 1000;
+    background: rgba(7, 7, 20, 0.8);
+    width: 100%;
+    justify-content: flex-end;
 }
 
 header a {
     color: #9490b0;
     text-decoration: none;
     font-weight: 500;
-    font-size: 16px;
-    letter-spacing: 2px;
+    font-size: 14px;
+    letter-spacing: 1px;
     text-transform: uppercase;
-    position: relative;
     transition: 0.3s;
 }
 
@@ -55,77 +55,65 @@ header a:hover {
     color: var(--main-cyan);
 }
 
-
+/* HERO SECTION */
 .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 95%;
-    max-width: 1900px;
+    width: 90%;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 0 5%;
+    padding: 150px 0 100px 0; 
 }
-
 
 .text-section {
     flex: 1;
-    text-align: left;
 }
 
 .intro-text {
     text-transform: uppercase;
-    letter-spacing: 6px;
+    letter-spacing: 4px;
     color: var(--accent-orange); 
-    font-size: 24px;
+    font-size: 18px;
     font-weight: 700;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
-
 h1 {
-    font-size: 110px;
+    font-size: 80px;
     margin: 0;
     line-height: 1.1;
     font-weight: 900;
     background: linear-gradient(to right, #fff 20%, var(--main-cyan) 50%, var(--accent-orange) 80%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    filter: drop-shadow(0 0 15px rgba(25, 153, 159, 0.3));
 }
 
 .role-text {
-    font-size: 28px;
+    font-size: 20px;
     color: #ccc;
-    margin-top: 25px;
-    margin-bottom: 50px;
-    max-width: 900px;
-    line-height: 1.4;
+    margin: 20px 0 40px 0;
+    max-width: 600px;
+    line-height: 1.5;
 }
 
-/* BUTTONS */
 .btn-group {
     display: flex;
-    gap: 25px;
+    gap: 15px;
+    flex-wrap: wrap;
 }
 
 .btn {
-    padding: 18px 45px;
+    padding: 15px 35px;
     border-radius: 50px;
     text-decoration: none;
     font-weight: 600;
-    font-size: 19px;
-    transition: all 0.4s ease;
+    transition: 0.4s;
 }
 
 .btn-cyan {
     background: linear-gradient(to right, #00eaff, #19999F);
     color: #070714;
-    box-shadow: 0 0 15px rgba(25, 153, 159, 0.6);
-}
-
-.btn-cyan:hover {
-    transform: scale(1.08);
-    box-shadow: 0 0 35px rgba(25, 153, 159, 0.9);
 }
 
 .btn-outline {
@@ -133,27 +121,19 @@ h1 {
     color: #ccc;
 }
 
-.btn-outline:hover {
-    color: white;
-    border-color: var(--main-cyan);
-    box-shadow: 0 0 40px var(--main-cyan); 
-    transform: scale(1.08);
-}
-
-
 .image-section {
-    flex: 0 0 450px;
+    flex: 0 0 400px;
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
 }
 
 .profile-img-container {
-    width: 450px;
-    height: 450px;
+    width: 350px;
+    height: 350px;
     border-radius: 50%;
     overflow: hidden;
-    border: 8px solid var(--main-cyan);
-    box-shadow: 0 0 50px rgba(25, 153, 159, 0.3);
+    border: 6px solid var(--main-cyan);
+    box-shadow: 0 0 30px rgba(25, 153, 159, 0.3);
 }
 
 .profile-img-container img {
@@ -161,42 +141,83 @@ h1 {
     height: 100%;
     object-fit: cover;
 }
+
+/* ABOUT SECTION */
+.about-section {
+    padding: 80px 5%;
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.about-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.about-text h2 {
+    font-size: 32px;
+    color: var(--main-cyan);
+    margin-bottom: 25px;
+}
+
+.about-text p {
+    font-size: 17px;
+    line-height: 1.8;
+    color: #ddd;
+    margin-bottom: 20px;
+}
+
+.highlight {
+    color: var(--accent-orange);
+    font-weight: bold;
+}
+
 .skills-list {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
-    margin-top: 20px;
+    margin-top: 30px;
 }
+
 .skill-item {
-    background: rgba(25, 153, 159, 0.2);
+    background: rgba(25, 153, 159, 0.1);
     border: 1px solid var(--main-cyan);
-    padding: 5px 15px;
+    padding: 8px 20px;
     border-radius: 20px;
     font-size: 14px;
     color: var(--main-cyan);
 }
+
+
 @media (max-width: 768px) {
     .container {
-        flex-direction: column; /* كيرجع الاسم الفوق والتصويرة لتحت */
+        flex-direction: column;
         text-align: center;
-        padding-top: 50px;
+        padding: 100px 5% 50px 5%;
     }
 
     .image-section {
-        margin-top: 30px;
+        flex: 0 0 auto;
+        margin-top: 40px;
+        order: -1;
     }
 
-    .about-container {
-        flex-direction: column;
-        padding: 40px 20px;
+    .profile-img-container {
+        width: 250px;
+        height: 250px;
     }
 
     h1 {
-        font-size: 50px; 
+        font-size: 50px;
     }
 
-    .about-section {
-        margin-top: 50px;
+    .btn-group {
+        justify-content: center;
+    }
+
+    header {
+        padding: 15px;
+        justify-content: center;
+        gap: 15px;
     }
 }
 </style>
@@ -211,16 +232,12 @@ h1 {
 </header>
 
 <div class="container">
-
     <div class="text-section">
         <p class="intro-text">BONJOUR, JE SUIS</p>
-
         <h1>IMANE BOUF</h1>
-
         <p class="role-text">
             Future Ingénieure Industrielle de l'ENSA Kénitra, passionnée par l'ingénierie des données.
         </p>
-        
         <div class="btn-group">
             <a href="#contact" class="btn btn-cyan">Mon contact</a>
             <a href="#projets" class="btn btn-outline">Voir mes projets</a>
@@ -233,7 +250,8 @@ h1 {
         </div>
     </div>
 </div>
-<section id="about" class="about-section" style="width: 100%; display: block; clear: both; margin-top: 50px;">
+
+<section id="about" class="about-section">
     <div class="about-container">
         <div class="about-text">
             <h2>À Propos de Moi</h2>
@@ -260,5 +278,6 @@ h1 {
         </div>
     </div>
 </section>
+
 </body>
 </html>
