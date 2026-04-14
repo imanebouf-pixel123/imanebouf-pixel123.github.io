@@ -220,6 +220,92 @@ h1 {
         gap: 15px;
     }
 }
+    /* SECTION PROJETS */
+.projects-section {
+    padding: 80px 5%;
+    background: transparent;
+}
+
+.projects-title {
+    font-size: 36px;
+    color: var(--main-cyan);
+    margin-bottom: 50px;
+    text-align: left;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: 800;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.project-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(25, 153, 159, 0.2);
+    border-radius: 20px;
+    padding: 25px;
+    transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--main-cyan);
+    background: rgba(25, 153, 159, 0.05);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+}
+
+.project-tag-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+.tag {
+    background: rgba(25, 153, 159, 0.1);
+    color: var(--main-cyan);
+    padding: 4px 12px;
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.project-card h3 {
+    font-size: 22px;
+    color: #fff;
+    margin-bottom: 15px;
+}
+
+.project-card p {
+    font-size: 14px;
+    color: #b0b2c3;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+
+.github-btn {
+    color: var(--main-cyan);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.github-btn:hover {
+    color: var(--accent-orange);
+}
 </style>
 </head>
 
@@ -282,6 +368,63 @@ h1 {
         </div>
     </div>
 </section>
+<section id="projets" class="projects-section">
+    <div class="projects-container">
+        <h2 class="projects-title">Mes Projets</h2>
+        
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-tag-container">
+                    <span class="tag">Python</span>
+                    <span class="tag">Data Analysis</span>
+                    <span class="tag">Kaggle</span>
+                </div>
+                <h3>Supply Chain Analytics</h3>
+                <p>Pipeline complet de Data Cleaning et visualisations stratégiques sur <strong>9 994 transactions</strong>. Optimisation de la prise de décision via la POO.</p>
+                <a href="#" class="github-btn">Voir le projet →</a>
+            </div>
 
+            <div class="project-card">
+                <div class="project-tag-container">
+                    <span class="tag">Power BI</span>
+                    <span class="tag">Qualité</span>
+                </div>
+                <h3>Dashboard Excellence Industrielle</h3>
+                <p>Pilotage de la qualité sur <strong>15K pièces</strong>. Analyse des défauts et KPIs stratégiques (Taux Qualité: <strong>92.22%</strong>).</p>
+                <a href="#" class="github-btn">Voir le projet →</a>
+            </div>
+
+            <div class="project-card">
+                <div class="project-tag-container">
+                    <span class="tag">R</span>
+                    <span class="tag">Statistiques</span>
+                </div>
+                <h3>Étude d'Employabilité</h3>
+                <p>Analyse statistique sur <strong>83 individus</strong>. Insights stratégiques sur le marché de l'emploi des ingénieurs au Maroc.</p>
+                <a href="#" class="github-btn">Voir le projet →</a>
+            </div>
+
+            <div class="project-card">
+                <div class="project-tag-container">
+                    <span class="tag">C Language</span>
+                    <span class="tag">Optimization</span>
+                </div>
+                <h3>Algorithmes & Complexité</h3>
+                <p>Optimisation des structures de données et analyse de performance (BFS/DFS) sous contraintes de ressources.</p>
+                <a href="#" class="github-btn">Voir le projet →</a>
+            </div>
+
+            <div class="project-card">
+                <div class="project-tag-container">
+                    <span class="tag">SQL</span>
+                    <span class="tag">Database Design</span>
+                </div>
+                <h3>Architecture Relationnelle</h3>
+                <p>Conception de bases de données (<strong>10+ tables</strong>) et requêtes avancées sur Oracle APEX et MySQL.</p>
+                <a href="#" class="github-btn">Voir le projet →</a>
+            </div>
+        </div>
+    </div>
+</section>
 </body>
 </html>
