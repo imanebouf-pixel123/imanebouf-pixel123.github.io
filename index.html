@@ -97,26 +97,29 @@
         }
 
         .btn-group { display: flex; gap: 15px; flex-wrap: wrap; }
-
         .btn {
             padding: 15px 35px;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 600;
-            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             display: inline-block;
-        }
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important; 
+}
 
-        .btn-cyan {
-            background: linear-gradient(to right, #00eaff, #19999F);
-            color: #070714;
-        }
+       .btn-cyan:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 10px 25px rgba(25, 153, 159, 0.4);
+    filter: brightness(1.1);
+}
 
-        .btn-outline {
-            border: 2px solid #444;
-            color: #ccc;
-        }
+.btn-outline:hover {
+    transform: translateY(-5px) scale(1.05);
+    border-color: var(--main-cyan);
+    color: var(--main-cyan);
+    background: rgba(25, 153, 159, 0.05);
+}
 
+        
         .btn:hover {
             transform: scale(1.05);
             box-shadow: 0 10px 20px rgba(25, 153, 159, 0.2);
@@ -148,21 +151,23 @@
         .skills-list { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
         
         .skill-item {
-            background: rgba(25, 153, 159, 0.1);
-            border: 1px solid var(--main-cyan);
-            padding: 8px 22px;
-            border-radius: 20px;
-            font-size: 14px;
-            color: var(--main-cyan);
-            transition: 0.3s ease;
-            cursor: default;
-        }
+    background: rgba(25, 153, 159, 0.1);
+    border: 1px solid var(--main-cyan);
+    padding: 8px 22px;
+    border-radius: 20px;
+    font-size: 14px;
+    color: var(--main-cyan);
+    transition: all 0.3s ease !important; /* تأكيد الحركة */
+    cursor: pointer;
+    display: inline-block;
+}
 
-        .skill-item:hover {
-            background: var(--main-cyan);
-            color: var(--bg-dark);
-            transform: translateY(-5px);
-        }
+.skill-item:hover {
+    background: var(--main-cyan) !important;
+    color: var(--bg-dark) !important;
+    transform: translateY(-5px) !important;
+    box-shadow: 0 5px 15px rgba(25, 153, 159, 0.3);
+}
 
         /* PROJECTS SECTION - NEW DESIGN */
         .projects-section { padding: 100px 5%; }
@@ -179,7 +184,7 @@
             margin: 0 auto;
         }
 
-        /* التمركز للمشاريع 4 و 5 */
+        
         .project-card:nth-child(4) { grid-column: 1 / 2; margin-left: 50%; }
         .project-card:nth-child(5) { grid-column: 2 / 3; margin-left: 50%; }
 
